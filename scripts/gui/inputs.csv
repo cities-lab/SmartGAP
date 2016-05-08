@@ -1,0 +1,18 @@
+name,type,usedby,filename
+Population (Existing and Growth),Demand,Household and Firm Model,pop_by_age.csv
+Employment (Existing),Demand,Household and Firm Model,employment.csv
+Employment (Growth),Demand,Household and Firm Model,employment_growth.csv
+Regional Income,Demand,Household and Firm Model,regional_income.csv
+Road Lane Miles and Transit Revenue Miles,Supply,Accessibility Models,transportation_supply.csv
+Auto and Transit Trips per Capita,Demand,Travel Demand Models,trips_per_cap.csv
+Base Daily Vehicle Miles Traveled,Demand,Travel Demand Models,base_vmt.csv
+Truck and Bus Vehicle Miles Traveled,Demand,Travel Demand Models,truck_bus_vmt.csv
+"% Increase in Road Lane Miles, Transit Revenue Miles per Cap.",Policy,Induced Growth and Travel,transportation_supply_growth.csv
+% Road Miles with ITS Treatment,Policy,Policy Adjusted Congestion,its.csv
+Bicycling/Light Vehicle Targets,Policy,Policy Adjusted Travel Demand,light_vehicles.csv
+Auto Operating Surcharge per VMT,Policy,Policy Adjusted Travel Demand,vmt_charge.csv
+Increase in Parking Cost and Supply,Policy,Policy Adjusted Travel Demand,parking_growth.csv
+% of Employees Offerred Commute Options,Policy,Policy Adjusted Travel Demand,commute_options.csv
+Population and Jobs by Place Type,Built Environment,Urban Form Models,place_type_existing.csv
+% Growth by Place Type,Policy,Induced Growth and Travel,place_type_growth.csv
+% Increase in Auto Operating Cost,Policy,Policy Adjusted Travel Demand,auto_op_cost_growth.csv
