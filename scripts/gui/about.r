@@ -27,7 +27,7 @@ openAboutWindow <- function(container) {
     tcl("image","create","photo",logoImg, file="../images/RSGlogo.gif")
     rsgLogo <- tklabel(aboutFrame, image=logoImg)
     createdBy <- "This software was created by:"
-    copyright <- "Copyright © 2011-2012 RSG Inc., All rights reserved."
+    copyright <- "Copyright (c) 2011-2012 RSG Inc., All rights reserved."
 
     tkgrid(aboutFrame)
     tkgrid(tklabel(aboutFrame,text=title,font="AboutTitleFont"))

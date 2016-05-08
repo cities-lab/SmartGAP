@@ -16,6 +16,16 @@
 
 # Copyright 2011-2012 RSG, Inc.
 
+custom_libpath = normalizePath(paste(getwd(), "../library", sep="/"), winslash="/")
+if (!( custom_libpath %in% .libPaths() )) {
+  #add customized library path to .Rprofile
+  Rprofile_file = paste(path.expand("~"), ".Rprofile", sep="/")
+  libpaths_setting = paste(".libPaths(c(.libPaths(), \'", custom_libpath, "\'))\n", sep="")
+  write(libpaths_setting, file=Rprofile_file, append=T)
+  print(".libPaths set successfully; close this windows and run again.")
+  q(save="no")
+}
+
 options(warn=1)
 options(error=traceback)
 
@@ -31,7 +41,7 @@ version <- "0.90"
 
 dirs <- list()
 dirs$programRootDir <- normalizePath("../../", winslash="/")
-dirs$programRootDir <- substr(dirs$programRootDir, 1,nchar(dirs$programRootDir)-1)
+dirs$programRootDir <- substr(dirs$programRootDir, 1,nchar(dirs$programRootDir))
 dirs$gui <- function(...) paste(dirs$programRootDir,"scripts","gui",...,sep="/") 
 dirs$projects <- function(...) paste(dirs$programRootDir,"projects",...,sep="/") 
 dirs$curProject <- function(...) paste(dirs$projects(curProject),...,sep="/")
@@ -127,7 +137,7 @@ logoImg <- tclVar()
 tcl("image","create","photo",logoImg, file="../images/RSGlogo.gif")
 rsgLogo <- tklabel(footerFrame, image=logoImg)
 createdByLabel <- tklabel(footerFrame, text="This software was created by:", font="LicenseFont")
-licensingLabel <- tklabel(footerFrame, text="Copyright © 2011-2012 RSG Inc., All rights reserved.", font="LicenseFont")
+licensingLabel <- tklabel(footerFrame, text="Copyright (c) 2011-2012 RSG Inc., All rights reserved.", font="LicenseFont")
 tkpack(createdByLabel,rsgLogo, licensingLabel, side="left", expand=TRUE)
 
 ###############################################################################

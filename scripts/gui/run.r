@@ -126,7 +126,7 @@ runScenario <- function(step=NULL) {
         }
         cd \"", dirs$curScenario(), "\"
         set pipe [",
-            "open \"|Rscript.exe run_SmartGAP.r",  
+            "open \"|Rscript run_SmartGAP.r",  
             # option to run single step
             ifelse(is.null(step),"",paste(" -p", step)),
         " 2>@1\"]
